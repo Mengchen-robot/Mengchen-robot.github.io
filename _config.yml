@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "../images/2C2CBBB9-1775-4E10-8140-39F415FA6B67_1_105_c.png"
   name             : "Mengchen Ma"
   pronouns         : # example: "she/her"  
   bio              : "Research Interest: Embodied AI, Reinforcement Learning. Intern at Shanghai AI Lab"
