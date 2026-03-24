@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 ## About Me
-I am a Master's student in Robotics Engineering at Southeast University, advised by [Professor Yahui Gan](https://ieeexplore.ieee.org/author/37085826914). My research focuses on Embodied AI and Reinforcement Learning, with a particular interest in developing intelligent robotic systems that can learn and adapt in complex environments.
+I am a Master's student in Robotics Engineering at Southeast University, advised by [Professor Kaihua Zhang](https://scholar.google.com/citations?hl=en&user=FYatMi8AAAAJ&view_op=list_works&sortby=pubdate). My research focuses on Embodied AI and Reinforcement Learning, with a particular interest in developing intelligent robotic systems that can learn and adapt in complex environments.
 
 **Research Experience:**
 - **Previous Research**: State Key Laboratory of Robotics and System, Harbin Institute of Technology, supervised by [Professor Liang Ding](https://scholar.google.com/citations?user=N_jCW-UAAAAJ&hl=zh-CN)
