@@ -22,13 +22,13 @@ redirect_from:
   <ul class="profile__links">
     <li><a href="mailto:mmengchen4@gmail.com" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a></li>
     <li><a href="https://github.com/Mengchen-robot" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a></li>
-    <li><a href="https://arxiv.org/abs/2607.13653" title="arXiv"><i class="ai ai-arxiv" aria-hidden="true"></i><span class="sr-only">arXiv</span></a></li>
+    <li><a href="https://scholar.google.com/citations?user=RKTtQiQAAAAJ&amp;hl=zh-CN" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="sr-only">Google Scholar</span></a></li>
   </ul>
 </div>
 
 <div class="home-bio" markdown="1">
 
-Hi, I am Mengchen Ma (马梦琛), a Master's student in **Robotics Engineering** at [Southeast University](https://www.seu.edu.cn/english/), advised by [Prof. Kaihua Zhang](https://scholar.google.com/citations?hl=en&user=FYatMi8AAAAJ&view_op=list_works&sortby=pubdate). I am currently a robotics algorithm intern at [Horizon Robotics](https://en.horizon.auto/). Before that, I was a research intern at [Shanghai AI Laboratory](https://www.shlab.org.cn/), working with [Dr. Hanqing Wang](https://hanqingwangai.github.io/), and at the State Key Laboratory of Robotics and System, Harbin Institute of Technology, with [Prof. Liang Ding](https://scholar.google.com/citations?user=N_jCW-UAAAAJ&hl=zh-CN).
+Hi, I am Mengchen Ma (马孟晨), a Master's student in **Robotics Engineering** at [Southeast University](https://www.seu.edu.cn/english/), advised by [Prof. Kaihua Zhang](https://scholar.google.com/citations?hl=en&user=FYatMi8AAAAJ&view_op=list_works&sortby=pubdate). I am currently a robotics algorithm intern at [Horizon Robotics](https://en.horizon.auto/). Before that, I was a research intern at Shanghai AI Laboratory, working with [Dr. Hanqing Wang](https://hanqingwangai.github.io/), and at the State Key Laboratory of Robotics and System, HIT, with [Prof. Liang Ding](https://scholar.google.com/citations?user=N_jCW-UAAAAJ&hl=zh-CN).
 
 My research interests lie in **Embodied AI** and **Reinforcement Learning**, with a focus on vision-language-action models and embodied agents.
 
@@ -45,11 +45,11 @@ I am always happy to discuss research or collaboration — feel free to [drop me
   </li>
   <li>
     <span class="news__date">2025 — 2026</span>
-    <span class="news__text"><strong>Shanghai AI Laboratory</strong> · Research Intern</span><span class="news__detail">Post-training of VLA models and algorithms for embodied agents, with <a href="https://hanqingwangai.github.io/">Dr. Hanqing Wang</a>.</span>
+    <span class="news__text"><strong>Shanghai AI Laboratory</strong> · Research Intern</span><span class="news__detail">Post-training of VLA models and algorithms for embodied agents.</span>
   </li>
   <li>
     <span class="news__date">2024 — 2025</span>
-    <span class="news__text"><strong>State Key Laboratory of Robotics and System</strong>, Harbin Institute of Technology · Research Intern</span><span class="news__detail">Quadruped robot control algorithms and a Mars rover prototype, with <a href="https://scholar.google.com/citations?user=N_jCW-UAAAAJ&amp;hl=zh-CN">Prof. Liang Ding</a>.</span>
+    <span class="news__text"><strong>State Key Laboratory of Robotics and System</strong>, Harbin Institute of Technology · Research Intern</span><span class="news__detail">Quadruped robot control algorithms and a Mars rover prototype.</span>
   </li>
 </ul>
 
