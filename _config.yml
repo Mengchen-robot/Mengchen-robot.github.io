@@ -9,25 +9,25 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Mitchell's Bio"
+title                    : "Mengchen Ma"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+name                     : &name "Mengchen Ma"
+description              : &description "Homepage of Mengchen Ma, a Robotics Engineering master's student at Southeast University working on Embodied AI and Reinforcement Learning."
 url                      : https://Mengchen-robot.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "Mengchen-robot/Mengchen-robot.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "../images/2C2CBBB9-1775-4E10-8140-39F415FA6B67_1_105_c.png"
+  avatar           : "2C2CBBB9-1775-4E10-8140-39F415FA6B67_1_105_c.png"
   name             : "Mengchen Ma"
-  pronouns         : # example: "she/her"  
-  bio              : "Research Interest: Embodied AI, Reinforcement Learning. Intern at Shanghai AI Lab"
-  location         : "Shanghai,China"
-  employer         : "Southeast University"
+  pronouns         : # example: "she/her"
+  bio              : "M.S. student in Robotics Engineering @ Southeast University. Embodied AI &amp; Reinforcement Learning. Currently a Robotics Algorithm Intern @ Horizon Robotics."
+  location         : "Shanghai, China"
+  employer         : "Horizon Robotics"
   uri              : # URL
   email            : "mmengchen4@gmail.com" 
 

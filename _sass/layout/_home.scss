@@ -1,0 +1,217 @@
+/* ==========================================================================
+   HOMEPAGE
+   Card, timeline and tag styling for the landing page. Everything here is
+   built on the --global-* custom properties so it follows the dark theme.
+   ========================================================================== */
+
+/* The dead "Follow" button shipped by the template has no target. */
+.author__urls-wrapper .btn--inverse {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Section headings
+   -------------------------------------------------------------------------- */
+
+.page__content {
+  /* Excludes archive listings, which also use h2 for item titles. */
+  h2:not(.archive__item-title) {
+    margin-top: 2.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--global-border-color);
+    font-size: $type-size-4;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0.35em;
+      height: 0.9em;
+      margin-right: 0.55em;
+      vertical-align: -0.08em;
+      border-radius: 2px;
+      background-color: var(--global-link-color);
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Intro
+   -------------------------------------------------------------------------- */
+
+.home-intro {
+  font-size: $type-size-4;
+  line-height: 1.7;
+
+  p {
+    font-size: inherit;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Research interest chips
+   -------------------------------------------------------------------------- */
+
+.home-tags {
+  margin: 1.5em 0 0.5em;
+
+  /* Kramdown wraps the chips in a <p>, so both levels need to be the flex row. */
+  &,
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.tag-chip {
+  padding: 0.32em 0.85em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 2em;
+  background-color: var(--global-code-background-color);
+  color: var(--global-text-color);
+  font-size: $type-size-6;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Experience timeline
+   -------------------------------------------------------------------------- */
+
+.timeline {
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 2px solid var(--global-border-color);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 0.25em 0.5em;
+  margin-bottom: 2em;
+
+  &:last-child {
+    margin-bottom: 0.5em;
+  }
+
+  /* Dot on the timeline rail. */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.55em;
+    left: -1.95em;
+    width: 0.7em;
+    height: 0.7em;
+    border: 2px solid var(--global-bg-color);
+    border-radius: 50%;
+    background-color: var(--global-link-color);
+  }
+
+  h3 {
+    margin: 0.15em 0 0.4em;
+    font-size: $type-size-4;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0;
+    color: var(--global-text-color-light);
+  }
+}
+
+.timeline-date {
+  display: inline-block;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Publication card
+   -------------------------------------------------------------------------- */
+
+.pub-card {
+  margin: 1.5em 0;
+  padding: 1.4em 1.6em;
+  border: 1px solid var(--global-border-color);
+  border-left: 4px solid var(--global-link-color);
+  border-radius: $border-radius;
+  background-color: var(--global-code-background-color);
+  transition: $global-transition;
+
+  &:hover {
+    border-color: var(--global-dark-border-color);
+    border-left-color: var(--global-link-color);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    margin: 0.35em 0;
+    font-size: $type-size-4;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0.6em 0 0;
+  }
+}
+
+.pub-venue {
+  display: inline-block;
+  padding: 0.2em 0.7em;
+  border-radius: $border-radius;
+  background-color: var(--global-link-color);
+  color: #fff;
+  font-size: $type-size-7;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 1.1em !important;
+}
+
+.pub-link {
+  padding: 0.3em 0.9em;
+  border: 1px solid var(--global-link-color);
+  border-radius: $border-radius;
+  color: var(--global-link-color);
+  font-size: $type-size-6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: $global-transition;
+
+  &:hover,
+  &:focus {
+    background-color: var(--global-link-color);
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Narrow screens
+   -------------------------------------------------------------------------- */
+
+@include breakpoint(max-width $small) {
+  .home-intro {
+    font-size: $type-size-5;
+  }
+
+  .pub-card {
+    padding: 1.1em 1.2em;
+  }
+}
