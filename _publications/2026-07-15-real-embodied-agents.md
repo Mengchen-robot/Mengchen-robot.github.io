@@ -7,7 +7,7 @@ excerpt: 'A sim-to-real-consistent framework for interactive open-world mobile m
 date: 2026-07-15
 venue: 'European Conference on Computer Vision (ECCV)'
 paperurl: 'https://arxiv.org/abs/2607.13653'
-citation: 'Boyu Mi, Mengchen Ma, Yifei Yao, Xing Gao, Junting Chen, Yangzi Li, Zihou Zhu, Guohao Li, Zhenfei Yin, Tai Wang, Yao Mu, Jiangmiao Pang, Hanqing Wang. (2026). &quot;Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation.&quot; <i>ECCV 2026</i>.'
+citation: 'Boyu Mi*, Mengchen Ma*, Yifei Yao*, Xing Gao, Junting Chen, Yangzi Li, Zihou Zhu, Guohao Li, Zhenfei Yin, Tai Wang, Yao Mu, Jiangmiao Pang, Hanqing Wang. (2026). &quot;Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation.&quot; <i>ECCV 2026</i>. (* Equal contribution)'
 ---
 
 **REAL** is a sim-to-real-consistent framework for interactive open-world mobile manipulation. Agents explore from raw RGB observations, use deployable navigation and manipulation tools through an MCP-based interface, and communicate with a simulated user to resolve ambiguous instructions — all without access to privileged simulator state.

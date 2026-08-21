@@ -1,217 +1,381 @@
 /* ==========================================================================
    HOMEPAGE
-   Card, timeline and tag styling for the landing page. Everything here is
-   built on the --global-* custom properties so it follows the dark theme.
+   A single-column landing page in the spirit of the al-folio theme: crisp
+   white ground, one saturated accent, generous whitespace, and publications
+   laid out as teaser-plus-metadata rows.
+
+   Everything is scoped under .home-page so the rest of the template is
+   untouched. Accent colours are declared as custom properties below — change
+   those two values to re-skin the page.
    ========================================================================== */
 
-/* The dead "Follow" button shipped by the template has no target. */
-.author__urls-wrapper .btn--inverse {
-  display: none;
+:root {
+  --home-accent        : #2a4fd7;
+  --home-text          : #1c1c1d;
+  --home-text-light    : #6b7280;
+  --home-divider       : rgba(0, 0, 0, 0.1);
+  --home-tag-bg        : #f3f4f6;
+}
+
+html[data-theme="dark"] {
+  --home-accent        : #b8c6ff;
+  --home-text          : #f2f2f2;
+  --home-text-light    : #b9bcc0;
+  --home-divider       : rgba(255, 255, 255, 0.16);
+  --home-tag-bg        : rgba(255, 255, 255, 0.09);
+}
+
+/* --------------------------------------------------------------------------
+   Shell
+   -------------------------------------------------------------------------- */
+
+/* The `#main` rules in layout/_page.scss are ID-specific, so this needs an ID
+   too in order to narrow the column. */
+#main.home-page {
+  max-width: 52rem;
+  margin: 3rem auto 0;
+  padding: 0 1.25rem;
+  color: var(--home-text);
+  font-family: "Roboto", $sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+
+  @include breakpoint($x-large) {
+    max-width: 52rem;
+  }
+
+  a {
+    color: var(--home-accent);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Header — name and tagline
+   -------------------------------------------------------------------------- */
+
+.home-page__header {
+  margin-bottom: 2rem;
+}
+
+.home-page__name {
+  margin: 0;
+  color: var(--home-text);
+  font-family: "Roboto Slab", $serif;
+  font-size: 3.25rem;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.home-page__tagline {
+  margin: 0.5rem 0 0;
+  color: var(--home-text-light);
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Profile block — floated right alongside the bio
+   -------------------------------------------------------------------------- */
+
+.profile {
+  float: right;
+  width: 30%;
+  margin: 0 0 1rem 1.75rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.profile__info {
+  margin-top: 0.75rem;
+  color: var(--home-text-light);
+  font-family: $monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+
+  p {
+    margin: 0;
+  }
+}
+
+.profile__links {
+  display: flex;
+  gap: 0.85rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    color: var(--home-text-light);
+    font-size: 1.15rem;
+    transition: color 0.15s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--home-accent);
+      text-decoration: none;
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Bio
+   -------------------------------------------------------------------------- */
+
+.home-bio {
+  /* Clears the floated profile so the following section starts below it. */
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  p {
+    margin: 0 0 1.1rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  strong {
+    font-weight: 500;
+  }
 }
 
 /* --------------------------------------------------------------------------
    Section headings
    -------------------------------------------------------------------------- */
 
-.page__content {
-  /* Excludes archive listings, which also use h2 for item titles. */
-  h2:not(.archive__item-title) {
-    margin-top: 2.5em;
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--global-border-color);
-    font-size: $type-size-4;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+.home-page .section-title {
+  margin: 3rem 0 1.25rem;
+  padding: 0;
+  border: 0;
+  color: var(--home-text);
+  font-family: "Roboto Slab", $serif;
+  font-size: 1.65rem;
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
 
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 0.35em;
-      height: 0.9em;
-      margin-right: 0.55em;
-      vertical-align: -0.08em;
-      border-radius: 2px;
-      background-color: var(--global-link-color);
+/* --------------------------------------------------------------------------
+   Experience — date rail on the left, description on the right
+   -------------------------------------------------------------------------- */
+
+.news {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.25rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--home-divider);
+
+    &:last-child {
+      border-bottom: 0;
     }
   }
 }
 
-/* --------------------------------------------------------------------------
-   Intro
-   -------------------------------------------------------------------------- */
-
-.home-intro {
-  font-size: $type-size-4;
-  line-height: 1.7;
-
-  p {
-    font-size: inherit;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Research interest chips
-   -------------------------------------------------------------------------- */
-
-.home-tags {
-  margin: 1.5em 0 0.5em;
-
-  /* Kramdown wraps the chips in a <p>, so both levels need to be the flex row. */
-  &,
-  p {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-  }
-
-  p {
-    margin: 0;
-  }
-}
-
-.tag-chip {
-  padding: 0.32em 0.85em;
-  border: 1px solid var(--global-border-color);
-  border-radius: 2em;
-  background-color: var(--global-code-background-color);
-  color: var(--global-text-color);
-  font-size: $type-size-6;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.news__date {
+  flex: 0 0 7rem;
+  color: var(--home-accent);
+  font-family: $monospace;
+  font-size: 0.8rem;
+  line-height: 1.9;
   white-space: nowrap;
 }
 
-/* --------------------------------------------------------------------------
-   Experience timeline
-   -------------------------------------------------------------------------- */
+.news__text {
+  flex: 1 1 18rem;
 
-.timeline {
-  margin: 1.5em 0;
-  padding-left: 1.5em;
-  border-left: 2px solid var(--global-border-color);
+  strong {
+    font-weight: 500;
+  }
 }
 
-.timeline-item {
-  position: relative;
-  padding: 0 0 0.25em 0.5em;
-  margin-bottom: 2em;
+/* Second line of an entry — what the role actually involved. */
+.news__detail {
+  flex: 1 1 100%;
+  margin-left: 8.25rem;
+  color: var(--home-text-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Publications
+   -------------------------------------------------------------------------- */
+
+.pub-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--home-divider);
 
   &:last-child {
-    margin-bottom: 0.5em;
-  }
-
-  /* Dot on the timeline rail. */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0.55em;
-    left: -1.95em;
-    width: 0.7em;
-    height: 0.7em;
-    border: 2px solid var(--global-bg-color);
-    border-radius: 50%;
-    background-color: var(--global-link-color);
-  }
-
-  h3 {
-    margin: 0.15em 0 0.4em;
-    font-size: $type-size-4;
-    line-height: 1.35;
-  }
-
-  p {
-    margin: 0;
-    color: var(--global-text-color-light);
+    border-bottom: 0;
   }
 }
 
-.timeline-date {
+.pub__preview {
+  flex: 0 0 6.5rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14), 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.pub__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pub__venue {
   display: inline-block;
-  color: var(--global-text-color-light);
-  font-size: $type-size-6;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-/* --------------------------------------------------------------------------
-   Publication card
-   -------------------------------------------------------------------------- */
-
-.pub-card {
-  margin: 1.5em 0;
-  padding: 1.4em 1.6em;
-  border: 1px solid var(--global-border-color);
-  border-left: 4px solid var(--global-link-color);
-  border-radius: $border-radius;
-  background-color: var(--global-code-background-color);
-  transition: $global-transition;
-
-  &:hover {
-    border-color: var(--global-dark-border-color);
-    border-left-color: var(--global-link-color);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
-    transform: translateY(-2px);
-  }
-
-  h3 {
-    margin: 0.35em 0;
-    font-size: $type-size-4;
-    line-height: 1.4;
-  }
-
-  p {
-    margin: 0.6em 0 0;
-  }
-}
-
-.pub-venue {
-  display: inline-block;
-  padding: 0.2em 0.7em;
-  border-radius: $border-radius;
-  background-color: var(--global-link-color);
+  margin-bottom: 0.45rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 3px;
+  background-color: var(--home-accent);
   color: #fff;
-  font-size: $type-size-7;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
 }
 
-.pub-links {
+html[data-theme="dark"] .pub__venue {
+  color: #1c1c1d;
+}
+
+.pub__title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.pub__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
-  margin-top: 1.1em !important;
+  gap: 0.35rem;
+  margin: 0.5rem 0;
 }
 
-.pub-link {
-  padding: 0.3em 0.9em;
-  border: 1px solid var(--global-link-color);
-  border-radius: $border-radius;
-  color: var(--global-link-color);
-  font-size: $type-size-6;
-  font-weight: 600;
-  text-decoration: none;
-  transition: $global-transition;
+.pub__tag {
+  padding: 0.1rem 0.6rem;
+  border-radius: 2em;
+  background-color: var(--home-tag-bg);
+  color: var(--home-text-light);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+.pub__authors {
+  font-size: 0.95rem;
+
+  em {
+    font-style: normal;
+    border-bottom: 1px solid currentColor;
+  }
+
+  sup {
+    font-size: 0.7em;
+  }
+}
+
+/* Equal-contribution footnote. */
+.pub__note {
+  color: var(--home-text-light);
+  font-size: 0.8rem;
+}
+
+.pub__periodical {
+  color: var(--home-text-light);
+  font-size: 0.9rem;
+}
+
+.pub__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.pub__btn {
+  padding: 0.2rem 0.9rem;
+  border: 1px solid var(--home-text-light);
+  border-radius: 3px;
+  color: var(--home-text) !important;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  transition: color 0.15s ease, border-color 0.15s ease;
 
   &:hover,
   &:focus {
-    background-color: var(--global-link-color);
-    color: #fff;
+    border-color: var(--home-accent);
+    color: var(--home-accent) !important;
     text-decoration: none;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Narrow screens
+   Narrow screens — stack the profile and drop the publication teaser
    -------------------------------------------------------------------------- */
 
 @include breakpoint(max-width $small) {
-  .home-intro {
-    font-size: $type-size-5;
+  .home-page__name {
+    font-size: 2.4rem;
   }
 
-  .pub-card {
-    padding: 1.1em 1.2em;
+  .profile {
+    float: none;
+    width: 60%;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+
+  .profile__links {
+    justify-content: center;
+  }
+
+  .news__date {
+    flex-basis: 100%;
+  }
+
+  .news__detail {
+    margin-left: 0;
+  }
+
+  .pub__preview {
+    display: none;
   }
 }

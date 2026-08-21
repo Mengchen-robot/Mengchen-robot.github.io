@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div id="main" class="home-page" role="main">
+  <article class="home-page__article">
+
+    <header class="home-page__header">
+      <h1 class="home-page__name">{{ page.title }}</h1>
+      {% if page.tagline %}
+        <p class="home-page__tagline">{{ page.tagline }}</p>
+      {% endif %}
+    </header>
+
+    <section class="home-page__content">
+      {{ content }}
+    </section>
+
+  </article>
+</div>
