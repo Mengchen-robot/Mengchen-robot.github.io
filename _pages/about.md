@@ -58,6 +58,22 @@ I am always happy to discuss research or collaboration — feel free to [drop me
 <ol class="pub-list">
   <li class="pub">
     <div class="pub__preview">
+      <img src="{{ base_path }}/images/publications/horizon_logo.png" alt="InstructMove" />
+    </div>
+    <div class="pub__body">
+      <abbr class="pub__venue">Tech Report 2026</abbr>
+      <div class="pub__title">InstructMove: A Text-Indispensable Benchmark for Instruction-Following Manipulation</div>
+      <div class="pub__authors">Mengao Zhao<sup>*</sup>, Ziang Li<sup>*</sup>, Chaodong Huang<sup>*</sup>, <em>Mengchen Ma</em><sup>*</sup>, Haoyi Jiang, Yiwei Jin, Xinjie Wang, Yun Du, Xuewu Lin, Taojun Ding, Hongyu Xie, Jackson Jiang, Chunlei Yu, Kaihua Zhang, Lichao Huang, Liu Liu, Tianwei Lin, Zhizhong Su</div>
+      <div class="pub__note"><sup>*</sup> Equal contribution.</div>
+      <div class="pub__periodical">Technical Report, <i>arXiv:2608.22990</i>, 2026</div>
+      <div class="pub__links">
+        <a class="pub__btn" href="https://arxiv.org/abs/2608.22990">arXiv</a>
+        <a class="pub__btn" href="https://github.com/HorizonRobotics/RoboOrchardSim">Code</a>
+      </div>
+    </div>
+  </li>
+  <li class="pub">
+    <div class="pub__preview">
       <img src="{{ base_path }}/images/publications/real-teaser.png" alt="REAL" />
     </div>
     <div class="pub__body">
